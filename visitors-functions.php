@@ -87,6 +87,17 @@ function visitors_can_record_visit( $displayed_user_id, $visitor_id ) {
 function visitor_is_visit_recordable( $user_id ) {
 
 	$is_enabled = true;
+	
+	$loggedin_user_id = bp_loggedin_user_id();
+    $my_user = ( $loggedin_user_id ) ? $loggedin_user_id : bp_get_member_user_id();
+    $member_type = bp_get_member_type( $my_user );
+	
+	//Don't record any users if they have one of the following member types
+    $in = array( 'brand', 'famous-person', 'organization', 'government' );
+	if ( ! in_array( $member_type, $in, false ) ) {
+		return $user_id;
+    }
+	return false;
 
 	if ( ! $user_id ) {
 		$is_enabled = false;
