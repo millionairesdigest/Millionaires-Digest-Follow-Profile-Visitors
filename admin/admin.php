@@ -225,7 +225,7 @@ class BP_Recent_Visitors_Admin {
 	 * Add admin Menu
 	 */
 	public function admin_menu() {
-		add_options_page( __( 'Recent Profile Visitors', 'recent-visitors-for-buddypress-profile' ), __( 'Recent Profile Visitors', 'recent-visitors-for-buddypress-profile' ), 'manage_options', 'bp-recent-visitors', array(
+		add_options_page( __( 'Profile Visitors', 'recent-visitors-for-buddypress-profile' ), __( 'Profile Visitors', 'recent-visitors-for-buddypress-profile' ), 'manage_options', 'bp-recent-visitors', array(
 			$this->page,
 			'render',
 		) );
