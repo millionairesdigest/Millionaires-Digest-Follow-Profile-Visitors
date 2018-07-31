@@ -1,0 +1,21 @@
+.most-visited-users-slide div.item-avatar img.avatar {
+    float: none !important;
+    margin: 0 !important;
+}
+.most-visited-users-slide div.item-meta {
+    margin: 0 !important;
+}
+.most-visited-users-slide li {
+    text-align: center;
+}
+.most-visited-users-list li {
+    display: inline-block;
+}
+ul.most-visited-users-grid {
+    margin: 0 auto !important;
+    text-align: left !important;
+}
+ul.most-visited-users-grid li {
+    display: inline-block !important;
+    vertical-align: top !important;
+}
