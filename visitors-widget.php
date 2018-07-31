@@ -52,7 +52,8 @@ class BP_Visitor_Most_Visited_Users_Widget extends WP_Widget {
 			        <?php foreach ( $top_profiles as $top_profile ) : ?>
                         <li>
                             <div class="item-avatar">
-						        <?php echo bp_core_fetch_avatar( array( 'item_id' => $top_profile->user_id ) ) ?>
+						        <a
+								   href="<?php echo bp_core_get_user_domain( $top_profile->user_id ) ?>"><?php echo bp_core_fetch_avatar( array( 'item_id' => $top_profile->user_id ) ) ; ?></a>
                             </div>
                             <div class="item">
                                 <div class="item-title"><a
