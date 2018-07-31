@@ -162,17 +162,17 @@ class BP_Visitors_Component extends BP_Component {
 		}
 
 		$bp            = buddypress();
-		$settings_link = bp_loggedin_user_domain() . bp_get_settings_slug() . '/';
+		$settings_link = bp_displayed_user_domain() . bp_get_settings_slug() . '/';
 
 		bp_core_new_subnav_item(
 			array(
-				'name'            => __( 'Recent Visits', 'recent-visitors-for-buddypress-profile' ),
+				'name'            => __( 'Profile Visitors', 'recent-visitors-for-buddypress-profile' ),
 				'slug'            => 'visitors',
 				'parent_url'      => $settings_link,
 				'parent_slug'     => $bp->settings->slug,
 				'screen_function' => 'bp_visitors_screen_general_settings',
 				'position'        => 40,
-				'user_has_access' => bp_is_my_profile(),
+				'user_has_access' => is_super_admin() || bp_is_my_profile(),
 			) );
 	}
 
