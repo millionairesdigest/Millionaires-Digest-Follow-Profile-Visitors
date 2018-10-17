@@ -93,7 +93,7 @@ function visitor_is_visit_recordable( $user_id ) {
     $member_type = bp_get_member_type( $my_user );
 	
 	//Don't record any users if they have one of the following member types
-    $in = array( 'brand', 'famous-person', 'organization', 'government' );
+    $in = array( 'brand', 'famous-person', 'organization', 'millionaires-digest', 'government' );
 	if ( ! in_array( $member_type, $in, false ) ) {
 		return $user_id;
     }
